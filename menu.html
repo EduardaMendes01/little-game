@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-menu.css">
+    
+    <title>Fluffy Love</title>
+</head>
+<body>
+    <div class="screen">
+        <div class="picture-container">
+            <picture>
+                <source srcset="./images/Menu-P.png" media="(max-width: 600px)">
+                <source srcset="./images/Menu-M.png" media="(max-width: 800px)">
+                <img src="./images/Menu-G.png" alt="menu-background">
+            </picture>
+        </div>
+
+        <audio id="audio-button" src="./sounds/click-audio.wav" type="audio/wav">
+        </audio>
+
+        <audio id="audio-hover" src="./sounds/bubble.wav" type="audio/wav"></audio>
+
+        <div class="menu">
+            <h1>Fluffy Love</h1>
+            <ul>
+                <li><a href="#">New Game</a></li>
+                <li><a href="#">Options</a></li>
+                <li><a href="#">Developer Commentary</a></li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
