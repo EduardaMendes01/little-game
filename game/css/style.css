@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
+body {
+    font-family: "Pixelify Sans", sans-serif;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -5,26 +11,31 @@
 }
 
 .game-board{
-    width: 80%;
+    width: 100%;
     height: 500px;
-    border: 1px solid #333;
+    border-bottom: 10px solid rgb(35, 168, 35);
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
+}
+
+#score{
+    position: absolute;
+    color: #B24C63;
 }
 
 .rock{
     position: absolute;
     bottom: 0;
     width: 60px;
-    left: 120px;
-    /*animation: rock-animation 2s infinite linear;*/
+    animation: rock-animation 1s infinite linear;
 }
 
 .me{
     position: absolute;
     width: 190px;
-    bottom: 0;
+    bottom:0;
 }
 
 .jump{
