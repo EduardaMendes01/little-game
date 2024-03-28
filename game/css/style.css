@@ -92,3 +92,12 @@ body {
         bottom: 0px;
     }
 }
+
+@keyframes him-animation{
+    from{
+        right: -60px;
+    }
+    to{
+        right: 100%;
+    }
+}

@@ -48,8 +48,8 @@ const updateScore = () => {
 
     if(score % 30 === 0 && score > 0){
         level = score / 30 + 1;
-        him.style.display = 'block';
-        me.stryle.visibility = 'hidden';
+        const himComing = him.animation;
+        rock.style.animation = 'none';
         nextLevel();
     }
 }
@@ -65,6 +65,10 @@ const checkCollision = () => {
         meRect.top < himRect.bottom &&
         meRect.bottom > himRect.top
     ) {
+        rock.style.animation = 'none';
+        rock.style.animation = 'hidden';
+        me.src = 'none';
+        him.src = '../images/us-loving.gif';
         // 'me' and 'him' characters collide, handle collision logic here
         // For example, don't lose the game
     }
