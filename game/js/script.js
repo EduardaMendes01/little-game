@@ -6,6 +6,8 @@ let level = 1;
 let score = 0;
 let stonesSkipped = 0;
 
+
+//jump animation
 const jump = () => {
     me.classList.add('jump');
 
@@ -19,7 +21,7 @@ const loop = setInterval( () => {
     const rockPosition = rock.offsetLeft;
     const mePosition = +window.getComputedStyle(me).bottom.replace('px', '');
 
-    
+//when lose
 if(rockPosition <= 115 && rockPosition > 0 && mePosition < 60){
 
     rock.style.animation = 'none';
@@ -32,6 +34,7 @@ if(rockPosition <= 115 && rockPosition > 0 && mePosition < 60){
 
     gameOver();
 
+//when won
 } else if(rockPosition <= 0){
     stonesSkipped++;
     score += 1;
@@ -48,11 +51,9 @@ const updateScore = () => {
 
     if(score % 30 === 0 && score > 0){
         level = score / 30 + 1;
-        const himComing = him.animation;
-        rock.style.animation = 'none';
-        nextLevel();
+            nextLevel();
+        }
     }
-}
 
 //Collision me and him
 const checkCollision = () => {
