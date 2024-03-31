@@ -17,31 +17,32 @@ const jump = () => {
 }
 
 
-const loop = setInterval( () => {
+const loopFunction = () => {
     const rockPosition = rock.offsetLeft;
     const mePosition = +window.getComputedStyle(me).bottom.replace('px', '');
 
-//when lose
-if(rockPosition <= 115 && rockPosition > 0 && mePosition < 60){
+    if (rockPosition <= 115 && rockPosition > 0 && mePosition < 60) {
+        rock.style.animation = 'none';
+        rock.style.left = `${rockPosition}px`;
 
-    rock.style.animation = 'none';
-    rock.style.left = `${rockPosition}px`;
+        me.style.animation = 'none';
+        me.style.bottom = `${mePosition}px`;
 
-    me.style.animation = 'none';
-    me.style.bottom  = `${mePosition}px`;
+        me.src = '../images/me-gameover1.gif';
 
-    me.src = '../images/me-gameover1.gif';
+        gameOver();
+        
+    } else if (rockPosition <= 0) {
+        stonesSkipped++;
+        score += 1;
+        updateScore();
+    }
 
-    gameOver();
-
-//when won
-} else if(rockPosition <= 0){
-    stonesSkipped++;
-    score += 1;
-    updateScore();
+    checkCollision();
 }
 
-}, 10);
+let loop = setInterval(loopFunction, 10);
+
 
 // Score
 
