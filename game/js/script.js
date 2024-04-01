@@ -80,9 +80,28 @@ const checkCollision = () => {
 const nextLevel = () => {
     const levelElement = document.getElementById('level');
     levelElement.textContent = `Level: ${level}`;
-     // Increment level
+    // Increment level
+    level++;
+
+    // Pause the game loop
+    clearInterval(loop);
+
+    // Hide rock and show him
+    rock.style.display = 'none';
+    him.style.display = 'block';
+
+    // After 5 seconds, hide him and show rock
+    setTimeout(() => {
+        him.style.display = 'none';
+        rock.style.display = 'block';
+
+        // Resume the game loop after the interaction
+        loop = setInterval(loopFunction, 10);
+    }, 5000);
+
     // Reset game elements, adjust game parameters, etc. for the next level
 }
+
 
 document.addEventListener('keydown', jump);
 
