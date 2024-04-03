@@ -21,6 +21,8 @@ const loopFunction = () => {
     const rockPosition = rock.offsetLeft;
     const mePosition = +window.getComputedStyle(me).bottom.replace('px', '');
 
+    //lose
+
     if (rockPosition <= 115 && rockPosition > 0 && mePosition < 60) {
         rock.style.animation = 'none';
         rock.style.left = `${rockPosition}px`;
@@ -31,7 +33,9 @@ const loopFunction = () => {
         me.src = '../images/me-gameover1.gif';
 
         gameOver();
-        
+      
+    //win    
+
     } else if (rockPosition <= 0) {
         stonesSkipped++;
         score += 1;
@@ -83,23 +87,7 @@ const nextLevel = () => {
     // Increment level
     level++;
 
-    // Pause the game loop
-    clearInterval(loop);
-
-    // Hide rock and show him
-    rock.style.display = 'none';
-    him.style.display = 'block';
-
-    // After 5 seconds, hide him and show rock
-    setTimeout(() => {
-        him.style.display = 'none';
-        rock.style.display = 'block';
-
-        // Resume the game loop after the interaction
-        loop = setInterval(loopFunction, 10);
-    }, 5000);
-
-    // Reset game elements, adjust game parameters, etc. for the next level
+   
 }
 
 
