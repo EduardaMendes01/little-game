@@ -52,6 +52,8 @@ body {
 
 .him{
     display: none;
+    width: 190px;
+    bottom:0;
    /* animation: him-animation 1s infinite linear;*/
 }
 
