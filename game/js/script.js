@@ -7,7 +7,6 @@ const him = document.querySelector('.him');
 let level = 1;
 let score = 0;
 let stonesSkipped = 0;
-let isHimVisible = false; // Adicionado para controlar a visibilidade de 'him'
 
 // jump animation
 const jump = () => {
@@ -41,8 +40,6 @@ const loopFunction = () => {
         score += 1;
         updateScore();
     }
-
-    checkCollision();
 }
 
 let loop = setInterval(loopFunction, 10);
@@ -58,51 +55,10 @@ const updateScore = () => {
     }
 }
 
-// check collision between 'me' e 'him'
-const checkCollision = () => {
-    const meRect = me.getBoundingClientRect();
-    const himRect = him.getBoundingClientRect();
-
-    if (
-        meRect.left < himRect.right &&
-        meRect.right > himRect.left &&
-        meRect.top < himRect.bottom &&
-        meRect.bottom > himRect.top
-    ) {
-        // 'me' e 'him' colidem, lidar com a lógica de colisão aqui
-        // Por exemplo, não perder o jogo
-
-        // Parar a animação dos obstáculos
-        rock.style.animation = 'none';
-        rock.style.display = 'none';
-
-        // Mudar a imagem de 'me' para o gif
-        me.src = '../images/us-loving.gif';
-
-               // Aguardar 5 segundos antes de continuar o jogo
-               setTimeout(() => {
-                // Continuar o jogo
-                rock.style.display = 'block';
-                rock.style.animation = ''; // reiniciar a animação
-                him.style.display = 'none'; // esconder 'him'
-                me.src = ''; // reiniciar a imagem de 'me'
-                isHimVisible = false; // Adicionado para controlar a visibilidade de 'him'
-            }, 5000);
-        }
-    }
-    
     // next level
     const nextLevel = () => {
         const levelElement = document.getElementById('level');
         levelElement.textContent = `Level: ${level}`;
-    
-        // Parar a animação dos obstáculos
-        rock.style.animation = 'none';
-    
-        // Mostrar o personagem 'him'
-        him.style.display = 'block';
-        isHimVisible = true; // Adicionado para controlar a visibilidade de 'him'
-    
         // Incrementar o nível
         level++;
     }
