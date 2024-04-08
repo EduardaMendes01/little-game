@@ -1,3 +1,14 @@
+//Character
+document.getElementById('start-game-button').addEventListener('click', function() {
+    if (selectedCharacter) {
+        //start the game with a chosen character
+        startGame(selectedCharacter);
+    } else {
+        console.log('Please choose a character before starting the game');
+    }
+});
+
+
 // Elements
 const me = document.querySelector('.me');
 const rock = document.querySelector('.rock');
@@ -7,6 +18,7 @@ const him = document.querySelector('.him');
 let level = 1;
 let score = 0;
 let stonesSkipped = 0;
+let selectedCharacter = null;
 
 // jump animation
 const jump = () => {
