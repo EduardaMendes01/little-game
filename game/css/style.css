@@ -48,12 +48,7 @@ body {
     bottom:0;
 }
 
-.him{
-    display: none;
-    width: 190px;
-    bottom:0;
-   /* animation: him-animation 1s infinite linear;*/
-}
+
 
 .jump{
     animation: jump 500ms ease-out;
@@ -87,14 +82,5 @@ body {
 
     100%{
         bottom: 0px;
-    }
-}
-
-@keyframes him-animation{
-    from{
-        right: -60px;
-    }
-    to{
-        right: 100%;
     }
 }

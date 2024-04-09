@@ -1,14 +1,3 @@
-//Character
-document.getElementById('start-game-button').addEventListener('click', function() {
-    if (selectedCharacter) {
-        //start the game with a chosen character
-        startGame(selectedCharacter);
-    } else {
-        console.log('Please choose a character before starting the game');
-    }
-});
-
-
 // Elements
 const me = document.querySelector('.me');
 const rock = document.querySelector('.rock');
