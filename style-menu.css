@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root{
     --color1:#B24C63;
     --color2:#5438DC;
@@ -22,10 +28,28 @@ body {
     font-family: "Pixelify Sans", sans-serif;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.menu-buttons{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    padding: 5px;
+}
+
+#b-start , #b-comment{
+    background-color: var(--color1);
+    color: var(--color6);
+    width: 160px;
+    height: 60px;
+    border: none;
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.208);
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#b-start:hover , #b-comment:hover{
+    background: var(--color2);
+    color: var(--color7);
+    transform: scale(1.1)
 }
 
 .game-board{
