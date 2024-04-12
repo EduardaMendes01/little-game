@@ -4,44 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style-menu.css">
-
+    <script src="./script.js"></script>
     <title>Fluffy Love</title>
 </head>
 <body>
-    <div class="screen">
-        <div class="picture-container">
-            <picture>
-                <source srcset="./images/Background-S.png" media="(max-width: 600px)">
-                <source srcset="./images/Background-M.png" media="(max-width: 800px)">
-                <img src="./images/Background-B.png" alt="menu-background">
-            </picture>
-        </div>
-
-        <audio id="audio-button" src="./sounds/click-audio.wav" type="audio/wav">
-        </audio>
-
-        <audio id="audio-hover" src="./sounds/bubble.wav" type="audio/wav"></audio>
-
-        <div class="menu">
-            <h1>Fluffy Love</h1>
-            
-                <h1>Fluffy Love</h1>
-                <form id="character-form">
-                    <label for="character-select">Choose your character:</label>
-                    <select id="character-select">
-                        <option value="he">he</option>
-                        <option value="she">she</option>
-                    </select>
-                    <button type="submit">New game</button>
-                </form>
-            
-            <ul>
-                <li><a href="./game/game.html" rel="next" class="links">New Game</a></li>
-                <li><a href="#" class="links">Options</a></li>
-                <li><a href="#" class="links">Developer Commentary</a></li>
-            </ul>
-        </div>
+    <div id="menu">
+        <button onclick="startGame()">Start Game</button>
+        <button onclick="showComment()">Developer comment</button>
     </div>
-    <script src="script.js"></script>
+
+    <div id="select-character" class="hidden">
+        <button onclick="chooseCharacter('he', './images/he-2.gif')">He</button>
+        <button onclick="chooseCharacter('she', './images/she-1.gif')">She</button>
+    </div>
+
+    <div class="game hidden game-board">
+        <div id="character-div" class="hidden">
+            <img id="character-gif" class="pe"> 
+        </div>
+        <img src="./images/Rock.png" class="rock" alt="Rock">
+        <div id="score">Score: 0</div>
+        <div id="level">Level: 0</div>
+    </div>
+
+    <div id="game-over" class="hidden">
+        <p>Game Over!</p>
+        <button onclick="returnToMenu()">Return to Menu</button>
+    </div>
 </body>
 </html>

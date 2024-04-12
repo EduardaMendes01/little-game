@@ -10,106 +10,93 @@
     --color7:white;
 }
 
-body {
-    margin: 0;
-    font-family: "Pixelify Sans", sans-serif;
-}
-
-.screen{
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
-
-picture {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.picture-container {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-
-.picture-container img {
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#audio-button , #audio-hover{
+.hidden{
     display: none;
 }
 
-.menu{
-    color: var(--color2);
-    margin-left: 4em;
-    text-transform: uppercase;
-    position: absolute;
-    z-index: 999;
+.character{
+    width: 100px;
 }
 
-.menu h1{
-    font-size:4em;
-    letter-spacing: 0.5px;
-    display: block;    
-    margin-bottom: 0.5em;
+body {
+    font-family: "Pixelify Sans", sans-serif;
 }
 
-.menu ul{
-    list-style: none;
+*{
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.menu li{
-    margin: 1em 0;
+.game-board{
+    width: 100%;
+    height: 500px;
+    border-bottom: 10px solid rgb(35, 168, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
-.menu li a {
-    text-decoration: none;
-    color: var(--color1);
-    font-weight: 600;
-    
+.container {
+    width: 100%;
 }
 
-.menu li a:hover {
-    color: var(--color3);
+#score, #level{
+    text-align: center;
+    color: #B24C63;
+    font-size: 1.2em;
+    max-width: 500px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin: auto;
+    text-shadow: 1px 3px 5px rgba(0, 0, 0, 0.548);
 }
 
+.rock{
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    animation: rock-animation 1s infinite linear;
+}
 
-@media screen and (max-width: 700px){
-    .menu h1{
-        font-size: 2em;
+.pe{
+    position: absolute;
+    width: 190px;
+    bottom:0;
+}
+
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+@keyframes rock-animation{
+    from{
+        right: -60px;
+    }
+    to{
+        right: 100%;
     }
 }
 
-@media screen and (max-width: 800px) {
-    .picture-container img {
-        width: 100%;
-        height: auto;
+@keyframes jump {
+    0%{
+        bottom: 0px;
+    }
+
+    40%{
+        bottom: 100px;
+    }
+
+    50%{
+        bottom:100px;
+    }
+
+    60%{
+        bottom: 100px;
+    }
+
+    100%{
+        bottom: 0px;
     }
 }
-
-@media screen and (max-width: 500px){
-    .menu h1{
-        letter-spacing: 2px;
-    }
-}
-
