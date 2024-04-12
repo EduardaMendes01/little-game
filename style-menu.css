@@ -26,16 +26,31 @@
 
 body {
     font-family: "Pixelify Sans", sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
 }
 
-.menu-buttons{
-    display: flex;
-    align-items: center; 
-    justify-content: center;
+#menu, #select-character{
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.menu-buttons,  #select-character, #return-menu{
+    margin: 0 5px;
     padding: 5px;
 }
 
-#b-start , #b-comment{
+#b-start , #b-comment, #return-menu{
     background-color: var(--color1);
     color: var(--color6);
     width: 160px;
@@ -46,11 +61,53 @@ body {
     font-size: 20px;
 }
 
-#b-start:hover , #b-comment:hover{
+#character-1, #character-2{
+    background-color: var(--color1);
+    color: var(--color6);
+    width: 150px;
+    height: 150px;
+    border: none;
+    box-shadow: 4px 5px 5px rgba(0, 0, 0, 0.208);
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+#b-start:hover , #b-comment:hover, #character-1:hover, #character-2:hover, #return-menu:hover {
     background: var(--color2);
     color: var(--color7);
     transform: scale(1.1)
 }
+
+
+#select-character > button > img{
+    width: 150px;
+    height: 150px;
+    align-items: center;
+}
+
+#game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    z-index: 9999;
+    font-size: 30px;
+}
+
+#title{
+    color: #5438DC;
+    padding: 5px;
+}
+
+#gameOv{
+    padding: 5px;
+    color: var(--color3);
+}
+
 
 .game-board{
     width: 100%;

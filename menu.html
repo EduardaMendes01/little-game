@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="menu">
+        <h1 id="title">Little-game</h1>
         <div class="menu-buttons">
             <button onclick="startGame()" id="b-start"  >Start Game</button>
         </div>
@@ -19,8 +20,12 @@
     </div>
 
     <div id="select-character" class="hidden">
-        <button onclick="chooseCharacter('he', './images/he-2.gif')">He</button>
-        <button onclick="chooseCharacter('she', './images/she-1.gif')">She</button>
+        <button id="character-1" onclick="chooseCharacter('he', './images/he-2.gif')">
+            <img src="./images/character-1.png" alt="">
+        </button>
+        <button onclick="chooseCharacter('she', './images/she-1.gif')" id="character-2">
+            <img src="./images/character-2.png" alt="">
+        </button>
     </div>
 
     <div class="game hidden game-board">
@@ -33,8 +38,8 @@
     </div>
 
     <div id="game-over" class="hidden">
-        <p>Game Over!</p>
-        <button onclick="returnToMenu()">Return to Menu</button>
+        <p id="gameOv">Game Over!</p>
+        <button id="return-menu" onclick="returnToMenu()">Return to Menu</button>
     </div>
 </body>
 </html>
