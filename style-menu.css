@@ -31,7 +31,10 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f0f0;
+    background-image: url(./images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #menu, #select-character{
@@ -39,7 +42,7 @@ body {
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
 
@@ -78,7 +81,6 @@ body {
     transform: scale(1.1)
 }
 
-
 #select-character > button > img{
     width: 150px;
     height: 150px;
@@ -112,11 +114,14 @@ body {
 .game-board{
     width: 100%;
     height: 500px;
-    border-bottom: 10px solid rgb(35, 168, 35);
+    border-bottom: 10px solid #379634;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(#87CEEB, #E0F6FF);
+    background-image: url(./images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .container {

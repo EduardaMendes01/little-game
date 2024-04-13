@@ -42,8 +42,21 @@ function startLoop(){
 
     loop = setInterval(loopFunction, 10);
     
+    document.querySelector('.game').classList.remove('hidden');
+
+    playGameSong(); 
 }
 
+function playGameSong() {
+    var gameSong = document.getElementById("game-song");
+    gameSong.play();
+}
+
+function stopGameSong() {
+    var gameSong = document.getElementById("game-song");
+    gameSong.pause();
+    gameSong.currentTime = 0; // Reinicia o áudio para o início
+}
 
 //function to show the developer comment
 function showComment(){
@@ -73,6 +86,8 @@ const loopFunction = () => {
         pe.style.bottom = `${pePosition}px`;
 
         pe.src = './images/me-gameover1.gif';
+    
+        stopGameSong(); // Parar o áudio do jogo
 
         gameOver();
       
@@ -127,3 +142,8 @@ const updateScore = () => {
         location.reload();
     }
     
+    function playClickSound() {
+        var audio = document.getElementById("click-sound");
+        audio.play();
+      }
+      

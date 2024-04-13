@@ -8,27 +8,36 @@
     <title>Fluffy Love</title>
 </head>
 <body>
+
+    <audio id="game-song">
+        <source src="./sounds/theme-game.wav" type="audio/wav">
+    </audio>
+
+    <audio id="click-sound">
+        <source src="./sounds/click-audio.wav" type="audio/wav">
+    </audio>
+
     <div id="menu">
         <h1 id="title">Little-game</h1>
         <div class="menu-buttons">
-            <button onclick="startGame()" id="b-start"  >Start Game</button>
+            <button onclick="startGame(), playClickSound()" id="b-start" >Start Game</button>
         </div>
         <div class="menu-buttons">
-            <button onclick="showComment()"
+            <button onclick="showComment(), playClickSound()"
             id="b-comment">Developer comment</button>
         </div>
     </div>
 
     <div id="select-character" class="hidden">
-        <button id="character-1" onclick="chooseCharacter('he', './images/he-2.gif')">
+        <button id="character-1" onclick="chooseCharacter('he', './images/he-2.gif'), playClickSound()">
             <img src="./images/character-1.png" alt="">
         </button>
-        <button onclick="chooseCharacter('she', './images/she-1.gif')" id="character-2">
+        <button onclick="chooseCharacter('she', './images/she-1.gif'), playClickSound()" id="character-2">
             <img src="./images/character-2.png" alt="">
         </button>
     </div>
 
-    <div class="game hidden game-board">
+    <div class="game hidden game-board background-game">
         <div id="character-div" class="hidden">
             <img id="character-gif" class="pe"> 
         </div>
@@ -39,7 +48,7 @@
 
     <div id="game-over" class="hidden">
         <p id="gameOv">Game Over!</p>
-        <button id="return-menu" onclick="returnToMenu()">Return to Menu</button>
+        <button id="return-menu" onclick="returnToMenu(), playClickSound()">Return to Menu</button>
     </div>
 </body>
 </html>
