@@ -85,7 +85,7 @@ const loopFunction = () => {
         pe.style.animation = 'none';
         pe.style.bottom = `${pePosition}px`;
 
-        pe.src = './images/me-gameover1.gif';
+        pe.src = './images/game-over.png';
     
         stopGameSong(); // Parar o áudio do jogo
 
