@@ -1,2 +1,2 @@
 # little-game
- Simple game
+ Simple game using HTML, CSS and JavaScript.
